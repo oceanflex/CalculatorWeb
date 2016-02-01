@@ -18,9 +18,11 @@
                 
             if(responseObj != null){%>
             <p>The area is 
-            <% out.println(responseObj.toString());
-            }%>
-            . Click <a href="rectangle.jsp">HERE</a> to go again</p><%else {%>
+            <% 
+                out.println(responseObj.toString());
+            %>
+            .</p><p> Click <a href="rectangle.jsp">HERE</a> to go again</p>
+            <% }else {%>
             <form method="post" id="rectangle" name="rectangle" action="rectangleController">
             <h4>To calculate the area of a rectangle, input the length and width</h4><hr/>
             <label for="rLength">Length</label>
