@@ -9,9 +9,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Rectangle Area</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <p>The area is <%
+            Object responseObj = request.getAttribute("area");
+            Object errObj = request.getAttribute("errorMsg");
+                
+            if(responseObj != null){
+                out.println(responseObj.toString());
+            }
+            %>
+            </p>
     </body>
 </html>
