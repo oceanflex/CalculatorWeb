@@ -11,18 +11,21 @@
         <title>Calculator Application</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../src/java/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../src/java/bootstrap/css/bsTheme.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        <div class="container">
         <%
             Object responseType = request.getParameter("submit");
             %>
-        <form method="post" action="CalcController">
+        <form method="post" action="CalcController" role="form">
             <h4>To calculate the area of a rectangle, input the length and width</h4><hr/>
             <label for="rLength">Length</label>
             <input type="number" name="rLength" id="rLength" value=""/><br/>
             <label for="rWidth">Width</label>
             <input type="number" name="rWidth" id="rWidth" value=""/><br/>
-            <input type="submit" name="submit" value="rec"/><% 
+            <input type="submit" class="btn btn-info" name="submit" value="rec"/><% 
             if(responseType != null && responseType.equals("rec")){
                 Object area = request.getAttribute("area");
                 out.print("<p>"+area);
@@ -35,7 +38,7 @@
             <h4>To calculate the area of a rectangle, input the length and width</h4><hr/>
             <label for="radius">Radius</label>
             <input type="number" name="radius" id="radius" value=""/><br/>
-            <input type="submit" name="submit" value="circle"/>
+            <input type="submit" class="btn btn-info" name="submit" value="circle"/>
             <%
             if(responseType != null && responseType.equals("circle")){
                 Object cArea = request.getAttribute("cArea");
@@ -51,7 +54,7 @@
             <input type="number" name="base" id="base" value=""/><br/>
             <label for="height">Height</label>
             <input type="number" name="height" id="height" value=""/><br/>
-            <input type="submit" name="submit" value="triangle"/>
+            <input type="submit" class="btn btn-info" name="submit" value="triangle"/>
             <%
             if(responseType != null && responseType.equals("triangle")){
                 Object tArea = request.getAttribute("tArea");
@@ -62,7 +65,8 @@
             }
             %>
         </form>
-        
+        </div>
+        <script src="../src/java/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     </body>
 </html>
 
