@@ -12,14 +12,25 @@
         <title>Rectangle Area</title>
     </head>
     <body>
-        <p>The area is <%
+        <%
             Object responseObj = request.getAttribute("area");
             Object errObj = request.getAttribute("errorMsg");
                 
-            if(responseObj != null){
-                out.println(responseObj.toString());
-            }
-            %>
-            </p>
+            if(responseObj != null){%>
+            <p>The area is 
+            <% out.println(responseObj.toString());
+            }%>
+            . Click <a href="rectangle.jsp">HERE</a> to go again</p><%else {%>
+            <form method="post" id="rectangle" name="rectangle" action="rectangleController">
+            <h4>To calculate the area of a rectangle, input the length and width</h4><hr/>
+            <label for="rLength">Length</label>
+            <input type="number" name="rLength" id="rLength" value=""/><br/>
+            <label for="rWidth">Width</label>
+            <input type="number" name="rWidth" id="rWidth" value=""/><br/>
+            <input type="submit" name="rSubmit" id="rSubmit"/>
+            <hr/><hr/>
+            
+        </form>
+                        <%}%>
     </body>
 </html>
