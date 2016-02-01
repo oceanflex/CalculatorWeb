@@ -31,9 +31,9 @@ public class RectangleController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String in = request.getParameter("length");
+            String in = request.getParameter("rLength");
             int length = Integer.parseInt(in);
-            in = request.getParameter("width");
+            in = request.getParameter("rWidth");
             int width = Integer.parseInt(in);
             RectangleCalc rCalc = new RectangleCalc();
             int area = rCalc.getArea(length,width);
