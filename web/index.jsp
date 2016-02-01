@@ -11,8 +11,8 @@
         <title>Calculator Application</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="../src/java/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="../src/java/bootstrap/css/bsTheme.css" rel="stylesheet" type="text/css"/>
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="bootstrap/css/bsTheme.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <div class="container">
@@ -35,7 +35,7 @@
             }
             %>
             <hr/><hr/>
-            <h4>To calculate the area of a rectangle, input the length and width</h4><hr/>
+            <h4>To calculate the area of a circle, input the length and width</h4><hr/>
             <label for="radius">Radius</label>
             <input type="number" name="radius" id="radius" value=""/><br/>
             <input type="submit" class="btn btn-info" name="submit" value="circle"/>
@@ -49,7 +49,7 @@
             }
             %>
             <hr/><hr/>
-            <h4>To calculate the area of a rectangle, input the length and width</h4><hr/>
+            <h4>To calculate the area of a triangle, input the length and width</h4><hr/>
             <label for="base">Base</label>
             <input type="number" name="base" id="base" value=""/><br/>
             <label for="height">Height</label>
@@ -66,7 +66,7 @@
             %>
         </form>
         </div>
-        <script src="../src/java/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     </body>
 </html>
 
