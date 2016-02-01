@@ -14,8 +14,7 @@
     </head>
     <body>
         <%
-            Object responseType = request.getAttribute("submit");
-            if(responseType == null){
+            Object responseType = request.getParameter("submit");
             %>
         <form method="post" action="CalcController">
             <h4>To calculate the area of a rectangle, input the length and width</h4><hr/>
@@ -23,12 +22,29 @@
             <input type="number" name="rLength" id="rLength" value=""/><br/>
             <label for="rWidth">Width</label>
             <input type="number" name="rWidth" id="rWidth" value=""/><br/>
-            <input type="submit" name="submit" value="rec"/>
+            <input type="submit" name="submit" value="rec"/><% 
+            if(responseType != null && responseType.equals("rec")){
+                Object area = request.getAttribute("area");
+                out.print("<p>"+area);
+               %>
+               is the area of the rectange.</p>
+        <%
+            }
+            %>
             <hr/><hr/>
             <h4>To calculate the area of a rectangle, input the length and width</h4><hr/>
             <label for="radius">Radius</label>
             <input type="number" name="radius" id="radius" value=""/><br/>
             <input type="submit" name="submit" value="circle"/>
+            <%
+            if(responseType != null && responseType.equals("circle")){
+                Object cArea = request.getAttribute("cArea");
+                out.print("<p>"+cArea);
+               %>
+               is the area of the circle.</p>
+        <%
+            }
+            %>
             <hr/><hr/>
             <h4>To calculate the area of a rectangle, input the length and width</h4><hr/>
             <label for="base">Base</label>
@@ -36,15 +52,17 @@
             <label for="height">Height</label>
             <input type="number" name="height" id="height" value=""/><br/>
             <input type="submit" name="submit" value="triangle"/>
-            <hr/><hr/>
-        </form>
-        <% 
-            }else if(responseType.equals("rec")){
+            <%
+            if(responseType != null && responseType.equals("triangle")){
+                Object tArea = request.getAttribute("tArea");
+                out.print("<p>"+tArea);
                %>
-               <p>rec time</p>
+               is the area of the triangle.</p>
         <%
             }
             %>
+        </form>
+        
     </body>
 </html>
 
