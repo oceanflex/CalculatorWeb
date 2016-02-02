@@ -38,7 +38,6 @@ public class CalcController extends HttpServlet {
             String in;
             switch (mode) {
                 case "rec":
-                    System.out.println("rec");
                     in = request.getParameter("rLength");
                     int length = Integer.parseInt(in);
                     
@@ -76,7 +75,6 @@ public class CalcController extends HttpServlet {
                     
                     break;
             }
-            System.out.println("done");
             view = request.getRequestDispatcher("/index.jsp");
             
             view.forward(request, response);

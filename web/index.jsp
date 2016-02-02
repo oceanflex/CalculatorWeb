@@ -21,46 +21,57 @@
             %>
         <form method="post" action="CalcController" role="form">
             <h4>To calculate the area of a rectangle, input the length and width</h4><hr/>
-            <label for="rLength">Length</label>
+            <div class="form-group">
+            <label for="rLength">Length</label><br/>
             <input type="number" name="rLength" id="rLength" value=""/><br/>
-            <label for="rWidth">Width</label>
+            </div><div class="form-group">
+            <label for="rWidth">Width</label><br/>
             <input type="number" name="rWidth" id="rWidth" value=""/><br/>
+            </div>
             <input type="submit" class="btn btn-info" name="submit" value="rec"/><% 
             if(responseType != null && responseType.equals("rec")){
                 Object area = request.getAttribute("area");
-                out.print("<p>"+area);
+                out.print("<hr/><div class=\"alert alert-success\" role=\"alert\"><p>"+area);
                %>
-               is the area of the rectange.</p>
+               is the area of the rectange.</p></div>
         <%
             }
             %>
-            <hr/><hr/>
+            <hr/>
             <h4>To calculate the area of a circle, input the length and width</h4><hr/>
-            <label for="radius">Radius</label>
+            <div class="form-group">
+            <label for="radius">Radius</label><br/>
             <input type="number" name="radius" id="radius" value=""/><br/>
+            </div>
             <input type="submit" class="btn btn-info" name="submit" value="circle"/>
             <%
             if(responseType != null && responseType.equals("circle")){
                 Object cArea = request.getAttribute("cArea");
-                out.print("<p>"+cArea);
+                String circle = cArea.toString();
+                circle = circle.substring(0, circle.indexOf('.')+3);
+                
+                out.print("<hr/><div class=\"alert alert-success\" role=\"alert\"><p>"+circle);
                %>
-               is the area of the circle.</p>
+               is roughly the area of the circle.</p></div>
         <%
             }
             %>
-            <hr/><hr/>
+            <hr/>
             <h4>To calculate the area of a triangle, input the length and width</h4><hr/>
-            <label for="base">Base</label>
+            <div class="form-group">
+            <label for="base">Base</label><br/>
             <input type="number" name="base" id="base" value=""/><br/>
-            <label for="height">Height</label>
+            </div><div class="form-group">
+            <label for="height">Height</label><br/>
             <input type="number" name="height" id="height" value=""/><br/>
+            </div>
             <input type="submit" class="btn btn-info" name="submit" value="triangle"/>
             <%
             if(responseType != null && responseType.equals("triangle")){
                 Object tArea = request.getAttribute("tArea");
-                out.print("<p>"+tArea);
+                out.print("<hr/><div class=\"alert alert-success\" role=\"alert\"><p>"+tArea);
                %>
-               is the area of the triangle.</p>
+               is the area of the triangle.</p></div>
         <%
             }
             %>
