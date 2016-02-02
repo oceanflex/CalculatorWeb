@@ -11,8 +11,8 @@
         <title>Calculator Application</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="bootstrap/css/bsTheme.css" rel="stylesheet" type="text/css"/>
+        <link href="bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="bsTheme.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <div class="container">
@@ -66,7 +66,7 @@
             %>
         </form>
         </div>
-        <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="bootstrap.min.js" type="text/javascript"></script>
     </body>
 </html>
 
